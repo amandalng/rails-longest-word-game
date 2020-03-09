@@ -1,0 +1,11 @@
+<h1>Result</h1>
+
+<% if @grid_validity == false %>
+  <p>Sorry, but <strong><%= params[:word].upcase %></strong> can't be built out of these letters: <%= params[:letters] %>.</p>
+<% elsif @english_validity == false %>
+  <p>Sorry, but <strong><%= params[:word].upcase %></strong> doesn't seem to be a valid English word.</p>
+<% else %>
+  <p>Congrats! <strong><%= params[:word].upcase %></strong> is a valid English word.</p>
+<% end %>
+
+<p><%= link_to "Play again!", "/new" %></p>
